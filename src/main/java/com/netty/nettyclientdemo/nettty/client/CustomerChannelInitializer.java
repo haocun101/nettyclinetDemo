@@ -6,6 +6,7 @@ import io.netty.channel.socket.SocketChannel;
 
 import java.util.concurrent.CountDownLatch;
 
+
 public class CustomerChannelInitializer extends ChannelInitializer<SocketChannel> {
 
     private String response;
@@ -40,6 +41,7 @@ public class CustomerChannelInitializer extends ChannelInitializer<SocketChannel
 
     public void setResponse(String response) {
         this.response = response;
+        //释放线程锁
         countDownLatch.countDown();
     }
 

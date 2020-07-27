@@ -49,6 +49,7 @@ public class NettyClient {
             e.printStackTrace();
         } finally {
             if (null != channelFuture) {
+                //关闭通道
                 channelFuture.channel().close();
             }
 
