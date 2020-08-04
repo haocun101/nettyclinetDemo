@@ -40,6 +40,7 @@ public class SocketConnectionFactory extends BasePooledObjectFactory<Socket>
     public Socket create() throws Exception {
         Socket socket = new Socket();
         socket.connect(this.socketAddress, 50000);
+        socket.setReuseAddress(true);
         return socket;
     }
     @Override
